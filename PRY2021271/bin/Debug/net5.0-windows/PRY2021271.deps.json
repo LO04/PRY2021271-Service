@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PRY2021271/1.0.0": {
+        "runtime": {
+          "PRY2021271.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PRY2021271/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
