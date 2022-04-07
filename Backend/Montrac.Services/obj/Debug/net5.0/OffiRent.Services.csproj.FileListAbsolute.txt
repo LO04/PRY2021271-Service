@@ -1,0 +1,15 @@
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\OffiRent.Services.deps.json
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\OffiRent.Services.dll
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\ref\OffiRent.Services.dll
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\OffiRent.Services.pdb
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\OffiRent.Domain.dll
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\bin\Debug\net5.0\OffiRent.Domain.pdb
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.csproj.AssemblyReference.cache
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.AssemblyInfoInputs.cache
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.AssemblyInfo.cs
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.csproj.CoreCompileInputs.cache
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.csproj.CopyComplete
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.dll
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\ref\OffiRent.Services.dll
+D:\UPC\202101\Diseño de Experimentos de ISW\Unidad 4\OffiRent-Backend-develop\OffiRent.Services\obj\Debug\net5.0\OffiRent.Services.pdb
