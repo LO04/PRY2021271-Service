@@ -28,3 +28,18 @@ D:\UPC\202201\Taller de Desempeño Profesional\Sem 1\TDP\Backend\Backend\Montrac
 D:\UPC\202201\Taller de Desempeño Profesional\Sem 1\TDP\Backend\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Domain.dll
 D:\UPC\202201\Taller de Desempeño Profesional\Sem 1\TDP\Backend\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Domain.pdb
 D:\UPC\202201\Taller de Desempeño Profesional\Sem 1\TDP\Backend\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.csproj.CopyComplete
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Persistence.deps.json
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Persistence.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\ref\Montrac.Persistence.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Persistence.pdb
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Domain.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\bin\Debug\net5.0\Montrac.Domain.pdb
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.csproj.AssemblyReference.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.AssemblyInfoInputs.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.AssemblyInfo.cs
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.csproj.CoreCompileInputs.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.csproj.CopyComplete
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\ref\Montrac.Persistence.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Persistence\obj\Debug\net5.0\Montrac.Persistence.pdb

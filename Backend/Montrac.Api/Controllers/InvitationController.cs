@@ -34,17 +34,17 @@ namespace Montrac.api.Controllers
             var result = await InvitationService.AcceptInvitation(invitationId, userId, accept);
 
             if (result != true)
-                return BadRequest("Program couldnt be deleted");
+                return BadRequest("Invitation couldnt be deleted");
 
             return Ok(true);
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] InvitationRequest resource)
+        public async Task<IActionResult> PostAsync([FromBody] NewInvitation resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var result = await InvitationService.CreateInvitation(resource);
+            var result = await InvitationService.CreateInvitation(Mapper.Map<NewInvitation, InvitationRequest>(resource));
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -64,9 +64,10 @@ namespace Montrac.api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<InvitationRequest>> Search([FromQuery] int? managerId, [FromQuery] int? guestId)
+        public async Task<IEnumerable<NewInvitation>> Search([FromQuery] int? managerId, [FromQuery] int? guestId)
         {
-            return await InvitationService.Search(managerId, guestId);
+            var invitations = await InvitationService.Search(managerId, guestId);
+            return Mapper.Map<IEnumerable<InvitationRequest>, IEnumerable<NewInvitation>>(invitations);
         }
     }
 }

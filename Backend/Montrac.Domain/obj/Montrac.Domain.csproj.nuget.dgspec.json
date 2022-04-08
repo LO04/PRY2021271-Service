@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\Montrac.Domain.csproj": {}
+    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\Montrac.Domain.csproj": {}
   },
   "projects": {
-    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\Montrac.Domain.csproj": {
+    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\Montrac.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
+        "projectUniqueName": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
         "projectName": "Montrac.Domain",
-        "projectPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
+        "projectPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\obj\\",
+        "outputPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

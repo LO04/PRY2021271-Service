@@ -71,7 +71,7 @@ namespace Montrac.Api
 
             services.AddDbContext<MontracDbContext>(options =>
             {
-                options.UseInMemoryDatabase("montrac-api-in-memory");
+                options.UseInMemoryDatabase("montrac-api-in-memory").UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 //options.UseMySQL(Configuration.GetConnectionString("MySQLConnection"));
                 // options.UseNpgsql("server=localhost;port=5432;database=montrac;uid=postgres;password=postgres");
             });
@@ -80,12 +80,13 @@ namespace Montrac.Api
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddScoped<Authentication.IAuthenticationService, AuthenticationService>();
-            services.AddScoped<IAreaService, AreaService>();
             services.AddScoped<IScreenshotService, ScreenshotService>();
             services.AddScoped<IInvitationService, InvitationService>();
             services.AddScoped<IProgramService, ProgramService>();
             services.AddScoped<IUrlService, UrlService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUrlHelperService, UrlHelperService>();
+            services.AddScoped<IAreaService, AreaService>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

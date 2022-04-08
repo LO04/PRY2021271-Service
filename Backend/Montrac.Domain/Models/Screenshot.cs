@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Montrac.api.DataObjects.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

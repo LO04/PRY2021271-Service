@@ -12,7 +12,6 @@ namespace Montrac.Domain.Services
     {
         Task<IEnumerable<Screenshot>> Search(int? userId = null, int? screenshotId = null);
         Task<Response<Screenshot>> CreateScreenshot(Screenshot screenshot);
-        Task<Response<Screenshot>> EditScreenshot(Screenshot screenshot, int screenshotId);
         Task<bool> DeleteScreenshot(int screenshotId);
     }
 }

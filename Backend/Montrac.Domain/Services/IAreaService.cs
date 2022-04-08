@@ -10,9 +10,9 @@ namespace Montrac.Domain.Services
 {
     public interface IAreaService
     {
-        Task<IEnumerable<Area>> Search(int? managerId = null, int? areaId = null);
+        //Task<IEnumerable<Area>> Search(int? managerId = null, int? areaId = null);
         Task<Response<Area>> CreateArea(Area area);
-        Task<Response<Area>> EditArea(Area area, int areaId);
+        //Task<Response<Area>> EditArea(Area area, int areaId);
         Task<bool> DeleteArea(int areaId);
     }
 }

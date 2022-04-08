@@ -6,7 +6,11 @@ namespace Montrac.Domain.Models
     public class Area : AuditModel
     {
         public string Name { get; set; }
-        public int ManagerId { get; set; }
-        public ICollection<GuestUsers> Users { get; set; }
+        public ICollection<BasicUserView> Users { get; set; }
+
+        public Area()
+        {
+            Users = new HashSet<BasicUserView>();
+        }
     }
 }

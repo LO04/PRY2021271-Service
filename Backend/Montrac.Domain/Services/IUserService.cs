@@ -10,7 +10,7 @@ namespace Montrac.Domain.Services
     {
         Task<IEnumerable<User>> Search(int? managerId = null, int? userId = null);
         Task<Response<User>> CreateUser(User user);
-        Task<Response<User>> EditUser(User user, int userId);
+        Task<Response<User>> EditUser(User user);
         Task<bool> DeleteUser(int userId);
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Montrac.Api.Extensions;
+using Montrac.Domain.DataObjects;
 using Montrac.Domain.Models;
 using Montrac.Domain.Services;
 using System;
@@ -29,11 +30,11 @@ namespace Montrac.api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] Program resource)
+        public async Task<IActionResult> PostAsync([FromBody] NewProgram resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var result = await ProgramService.CreateProgram(resource);
+            var result = await ProgramService.CreateProgram(Mapper.Map<NewProgram, Program>(resource));
 
             if (!result.Success)
                 return BadRequest(result.Message);
@@ -52,19 +53,20 @@ namespace Montrac.api.Controllers
             return Ok(true);
         }
 
-        [HttpPut("{programId:int}")]
-        public async Task<IActionResult> PutAsync([FromBody] Program program, int programId)
+        [HttpPut]
+        public async Task<IActionResult> PutAsync([FromBody] NewProgram program)
         {
-            var result = await ProgramService.EditProgram(program, programId);
+            var result = await ProgramService.EditProgram(Mapper.Map<NewProgram, Program>(program));
             if (!result.Success)
                 return BadRequest(result.Message);
             return Ok(result.Resource);
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Program>> Search([FromQuery] int? programId, [FromQuery] int? userId)
+        public async Task<IEnumerable<NewProgram>> Search([FromQuery] int? programId, [FromQuery] int? userId)
         {
-            return await ProgramService.Search(programId, userId);
+            var programs = await ProgramService.Search(programId, userId);
+            return Mapper.Map<IEnumerable<Program>, IEnumerable<NewProgram>>(programs);
         }
     }
 }

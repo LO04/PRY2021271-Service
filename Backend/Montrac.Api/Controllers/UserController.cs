@@ -48,8 +48,7 @@ namespace Montrac.Api.Controllers
         public async Task<IEnumerable<BasicUserView>> Search([FromQuery] int? managerId, [FromQuery] int? userId)
         {
             var users = await UserService.Search(managerId, userId);
-            var userDataObjects = Mapper.Map<IEnumerable<User>, IEnumerable<BasicUserView>>(users);
-            return userDataObjects;
+            return Mapper.Map<IEnumerable<User>, IEnumerable<BasicUserView>>(users);
         }
 
         [AllowAnonymous]
@@ -68,10 +67,10 @@ namespace Montrac.Api.Controllers
             return Ok(userResource);
         }
 
-        [HttpPut("{userId:int}")]
-        public async Task<IActionResult> PutAsync([FromBody] BasicUserView user, int userId)
+        [HttpPut]
+        public async Task<IActionResult> PutAsync([FromBody] BasicUserView user)
         {
-            var result = await UserService.EditUser(Mapper.Map<BasicUserView, User>(user), userId);
+            var result = await UserService.EditUser(Mapper.Map<BasicUserView, User>(user));
             if (!result.Success)
                 return BadRequest(result.Message);
             return Ok(result.Resource);

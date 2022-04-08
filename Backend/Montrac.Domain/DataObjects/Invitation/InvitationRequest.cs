@@ -10,12 +10,12 @@ namespace Montrac.Domain.DataObjects.Invitation
 {
     public class InvitationRequest : AuditModel
     {
-        public bool IsAccepted { get; set; }
+        public bool Status { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
-        public User Guest { get; set; }
+        public GuestUsers Guest { get; set; }
         public int GuestId { get; set; }
-        public User Manager { get; set; }
+        public GuestUsers Manager { get; set; }
         public int ManagerId { get; set; }
     }
 }

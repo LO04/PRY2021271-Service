@@ -25,18 +25,16 @@ namespace Montrac.Services
 
         public async Task<Response<Area>> CreateArea(Area area)
         {
-            var user = await UserRepository.GetAsync(area.ManagerId);
-
-            if (user == null || user.IsDeleted)
-                return new Response<Area>("This user does not exist");
-
-            if (string.IsNullOrEmpty(area.Name))
-                return new Response<Area>("Area name cannot be null");
-
-            var result = await AreaRepository.InsertAsync(area);
-
-            await UnitOfWork.CompleteAsync();
-            return new Response<Area>(result);
+            try
+            {
+                var result = await AreaRepository.InsertAsync(area);
+                await UnitOfWork.CompleteAsync();
+                return new Response<Area>(result);
+            }
+            catch (Exception ex)
+            {
+                return new Response<Area>($"An error occurred while creating the area: {ex.Message}");
+            }
         }
 
         public async Task<bool> DeleteArea(int areaId)
@@ -57,36 +55,36 @@ namespace Montrac.Services
             }
         }
 
-        public async Task<Response<Area>> EditArea(Area area, int areaId)
-        {
-            try
-            {
-                if (await AreaRepository.GetAsync(areaId) == null)
-                    return new Response<Area>($"The area does not exist");
+        //public async Task<Response<Area>> EditArea(Area area, int areaId)
+        //{
+        //    try
+        //    {
+        //        if (await AreaRepository.GetAsync(areaId) == null)
+        //            return new Response<Area>($"The area does not exist");
 
-                area.UpdatedAt = DateTime.Now;
-                await AreaRepository.UpdateAsync(area);
-                await UnitOfWork.CompleteAsync();
+        //        area.UpdatedAt = DateTime.Now;
+        //        await AreaRepository.UpdateAsync(area);
+        //        await UnitOfWork.CompleteAsync();
 
-                return new Response<Area>(area);
-            }
-            catch (Exception ex)
-            {
-                return new Response<Area>($"An error occurred while updating the area: {ex.Message}");
-            }
-        }
+        //        return new Response<Area>(area);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return new Response<Area>($"An error occurred while updating the area: {ex.Message}");
+        //    }
+        //}
 
-        public async Task<IEnumerable<Area>> Search(int? managerId = null, int? areaId = null)
-        {
-            var query = AreaRepository.GetAll();
+        //public async Task<IEnumerable<Area>> Search(int? managerId = null, int? areaId = null)
+        //{
+        //    var query = AreaRepository.GetAll();
 
-            if (managerId != null)
-                query = query.Where(q => q.ManagerId == managerId);
+        //    if (managerId != null)
+        //        query = query.Where(q => q.ManagerId == managerId);
 
-            if (areaId != null)
-                query = query.Where(q => q.Id == areaId);
+        //    if (areaId != null)
+        //        query = query.Where(q => q.Id == areaId);
 
-            return await query.ToListAsync();
-        }
+        //    return await query.ToListAsync();
+        //}
     }
 }

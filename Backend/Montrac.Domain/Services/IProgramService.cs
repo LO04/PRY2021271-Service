@@ -12,7 +12,7 @@ namespace Montrac.Domain.Services
     {
         Task<IEnumerable<Program>> Search(int? programId = null, int? userId = null);
         Task<Response<Program>> CreateProgram(Program program);
-        Task<Response<Program>> EditProgram(Program program, int programId);
+        Task<Response<Program>> EditProgram(Program program);
         Task<bool> DeleteProgram(int programId);
     }
 }

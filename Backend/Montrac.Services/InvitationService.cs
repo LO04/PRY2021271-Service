@@ -17,7 +17,7 @@ namespace Montrac.Domain.Services
         private readonly IRepository<User> UserRepository;
         private readonly IUnitOfWork UnitOfWork;
 
-        public InvitationService(IRepository<InvitationRequest> invitationRepository, IRepository<User> userRepository,  IUnitOfWork unitOfWork)
+        public InvitationService(IRepository<InvitationRequest> invitationRepository, IRepository<User> userRepository, IUnitOfWork unitOfWork)
         {
             InvitationRepository = invitationRepository;
             UserRepository = userRepository;
@@ -33,14 +33,31 @@ namespace Montrac.Domain.Services
                     return false;
 
                 var user = await UserRepository.GetAsync(userId);
-                if (user == null || invitation.GuestId != user.Id)
+                //if the invited user isnt the actual user
+                if (user == null || invitation.GuestId == user.Id)
                     return false;
 
-                if (accept)
+                if (accept && !invitation.Status)
                 {
                     //if the guest accept the invitation, its updated, otherwise its deleted.
-                    invitation.IsAccepted = true;
+                    //and to keep history of invitations only change status to accepted instead of delete the invitation
+                    invitation.Status = true;
                     await InvitationRepository.UpdateAsync(invitation);
+
+                    //add invited user to the group of workers for the manager
+                    var manager = await UserRepository.GetAsync(invitation.ManagerId);
+                    manager.Users.Add(user);
+                    await UserRepository.UpdateAsync(manager);
+
+                    //update worker
+                    user.Manager = new GuestUsers()
+                    {
+                        Id = manager.Id,
+                        Email = manager.Email,
+                        FullName = manager.FirstName + ' ' + manager.LastName
+                    };
+                    user.ManagerId = manager.Id;
+                    await UserRepository.UpdateAsync(user);
                 }
                 else
                 {
@@ -58,41 +75,43 @@ namespace Montrac.Domain.Services
 
         public async Task<Response<InvitationRequest>> CreateInvitation(InvitationRequest request)
         {
-            var guest = await UserRepository.FirstOrDefaultAsync(x => x.Email == request.Email);
-            if (guest == null)
-                return new Response<InvitationRequest>("The email that you are trying to invite doesnt exist");
+            var guest = UserRepository.GetAll().Where(x => x.Email == request.Email).FirstOrDefault();
 
             var manager = await UserRepository.GetAsync(request.ManagerId);
             if (manager == null)
                 return new Response<InvitationRequest>("The managerId that you use to invite doesnt exist");
 
-            var basicManager = new User()
+            if (guest != null && guest?.Id == manager.Id)
+                return new Response<InvitationRequest>("Cannot send an invite to yourself");
+
+            var basicManager = new GuestUsers()
             {
-                FirstName = manager.FirstName,
-                LastName = manager.LastName,
+                Id = manager.Id,
+                FullName = manager.FirstName + ' ' + manager.LastName,
                 Email = manager.Email
             };
 
-            var basiGuest = new User()
+            var basicGuest = new GuestUsers()
             {
-                FirstName = guest.FirstName,
-                LastName = guest.LastName,
-                Email = guest.Email
+                FullName = request.FullName,
+                Email = request.Email
             };
 
-            var guestUser = new GuestUsers()
-            {
-                Email = request.Email,
-                FullName = request.FullName
-            };
-
-            manager.GuestUsers.Add(guestUser);
+            request.Status = false;
             request.Manager = basicManager;
-            request.Guest = basiGuest;
+            request.Guest = basicGuest;
+            manager.Invitations.Add(request);
 
-            await InvitationRepository.InsertAsync(request);
-            await UserRepository.UpdateAsync(manager);
-            await UnitOfWork.CompleteAsync();
+            try
+            {
+                await UserRepository.UpdateAsync(manager);
+                await InvitationRepository.InsertAsync(request);
+                await UnitOfWork.CompleteAsync();
+            }
+            catch (Exception ex)
+            {
+                return new Response<InvitationRequest>(ex.Message);
+            }
 
             return new Response<InvitationRequest>(request);
         }

@@ -26,9 +26,9 @@ namespace Montrac.Services
 
         public async Task<Response<Screenshot>> CreateScreenshot(Screenshot detail)
         {
-            var user = await UserRepository.GetAsync(detail.User.Id);
+            var user = await UserRepository.GetAsync(detail.UserId);
 
-            if (user == null || user.IsDeleted)
+            if (user == null)
                 return new Response<Screenshot>("This user does not exist");
 
             var result = await DetailRepository.InsertAsync(detail);
@@ -52,25 +52,6 @@ namespace Montrac.Services
             catch (Exception ex)
             {
                 return false;
-            }
-        }
-
-        public async Task<Response<Screenshot>> EditScreenshot(Screenshot detail, int detailId)
-        {
-            try
-            {
-                if (await DetailRepository.GetAsync(detailId) == null)
-                    return new Response<Screenshot>($"This detail does not exist");
-
-                detail.UpdatedAt = DateTime.Now;
-                await DetailRepository.UpdateAsync(detail);
-                await UnitOfWork.CompleteAsync();
-
-                return new Response<Screenshot>(detail);
-            }
-            catch (Exception ex)
-            {
-                return new Response<Screenshot>($"An error occurred while updating the detail: {ex.Message}");
             }
         }
 

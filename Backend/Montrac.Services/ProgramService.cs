@@ -30,8 +30,11 @@ namespace Montrac.Services
             if (string.IsNullOrEmpty(program.Description))
                 return new Response<Program>("Description is empty");
 
-            if (program.TimeUsed != null)
-                return new Response<Program>("TimeUsed is empty");
+            if (program.TimeRemaining.HasValue && program.TimeRemaining.Value <= 0)
+                return new Response<Program>("TimeRemaining must be greater than 0");
+
+            if (program.TimeUsed.HasValue && program.TimeUsed.Value <= 0)
+                return new Response<Program>("TimeUsed must be greater than 0");
 
             await ProgramRepository.InsertAsync(program);
             await UnitOfWork.CompleteAsync();
@@ -58,12 +61,18 @@ namespace Montrac.Services
             }
         }
 
-        public async Task<Response<Program>> EditProgram(Program program, int programId)
+        public async Task<Response<Program>> EditProgram(Program program)
         {
             try
             {
-                if (await ProgramRepository.GetAsync(programId) == null)
+                if (await ProgramRepository.GetAsync(program.Id) == null)
                     return new Response<Program>($"The program does not exist");
+
+                if (program.TimeRemaining.HasValue && program.TimeRemaining.Value <= 0)
+                    return new Response<Program>("TimeRemaining must be greater than 0");
+
+                if (program.TimeUsed.HasValue && program.TimeUsed.Value <= 0)
+                    return new Response<Program>("TimeUsed must be greater than 0");
 
                 program.UpdatedAt = DateTime.Now;
                 await ProgramRepository.UpdateAsync(program);

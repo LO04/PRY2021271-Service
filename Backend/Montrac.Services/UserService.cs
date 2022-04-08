@@ -26,17 +26,20 @@ namespace Montrac.Services
 
         public async Task<Response<User>> CreateUser(User user)
         {
+            if (user.Email == null)
+                return new Response<User>("Email is empty");
+
+            if (user.Password == null)
+                return new Response<User>("Password is empty");
+
             if (await UserRepository.CountAsync(u => u.Email == user.Email) > 0)
                 return new Response<User>("This email is already being used by another account");
 
             if (await UserRepository.CountAsync(u => u.Identification == user.Identification) > 0)
                 return new Response<User>("This identification is already being used by another account");
 
-            if (await UserRepository.CountAsync(u => u.Phone == user.Phone) > 0)
+            if (await UserRepository.CountAsync(u => u.PhoneNumber == user.PhoneNumber) > 0)
                 return new Response<User>("This phone is already being used by another account");
-
-            if (await UserRepository.CountAsync(u => u.Username == user.Username) > 0)
-                return new Response<User>("This username is already being used by another account");
 
             await UserRepository.InsertAsync(user);
             await UnitOfWork.CompleteAsync();
@@ -44,11 +47,11 @@ namespace Montrac.Services
             return new Response<User>(user);
         }
 
-        public async Task<Response<User>> EditUser(User user, int userId)
+        public async Task<Response<User>> EditUser(User user)
         {
             try
             {
-                if (await UserRepository.GetAsync(userId) == null)
+                if (await UserRepository.GetAsync(user.Id) == null)
                     return new Response<User>($"The user does not exist");
 
                 user.UpdatedAt = DateTime.Now;
@@ -92,8 +95,13 @@ namespace Montrac.Services
             if (userId != null)
                 query = query.Where(q => q.Id == userId);
 
-            return await query
+            return await
+                query
+                .Include(x => x.Programs)
                 .Include(x => x.Manager)
+                .Include(x => x.Invitations)
+                .Include(x => x.Screenshots)
+                .Include(x => x.Urls)
                 .ToListAsync();
         }
     }

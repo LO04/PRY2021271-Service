@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SSemZlxZ4sMw7hrnBhO0FLfcbF9G8KwTTe4RyicOOnx+uVbwqcMtiqnf2hvV5D560VsVW8wK3U7yXVgaPbupgQ==",
+  "dgSpecHash": "e9IYuPQD8f0hUh3SBUgEvbD6F1bhMONB5niHnJFdziEi9X3Jo0oqdsBS+KKbUEDe53NIqUP9+eyC0S6ndkjnGQ==",
   "success": true,
-  "projectFilePath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Sem 1\\TDP\\Backend\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\PRY2021271-Service\\Backend\\Montrac.Domain\\Montrac.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
