@@ -9,6 +9,7 @@ namespace Montrac.Domain.DataObjects.Invitation
 {
     public class NewInvitation
     {
+        public int Id { get; set; }
         public bool Status { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
