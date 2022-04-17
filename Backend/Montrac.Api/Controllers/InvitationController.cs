@@ -40,11 +40,11 @@ namespace Montrac.api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] NewInvitation resource)
+        public async Task<IActionResult> PostAsync([FromBody] CreateNewInvitation resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());
-            var result = await InvitationService.CreateInvitation(Mapper.Map<NewInvitation, InvitationRequest>(resource));
+            var result = await InvitationService.CreateInvitation(Mapper.Map<CreateNewInvitation, InvitationRequest>(resource));
 
             if (!result.Success)
                 return BadRequest(result.Message);

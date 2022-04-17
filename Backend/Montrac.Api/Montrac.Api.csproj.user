@@ -7,5 +7,6 @@
     <ActiveDebugProfile>montrac.api</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\Backend\Montrac.Api\Properties\PublishProfiles\MontracApi20220413154050 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MontracApi20220413154050" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\UPC\\202201\\Taller\ de\ Desempeño\ Profesional\\PRY2021271-Service\\Backend\\Montrac\.Api\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

@@ -11,7 +11,7 @@ namespace Montrac.Domain.DataObjects.Url
     {
         public int Id { get; set; }
         public string Uri { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; }
         public string Browser { get; set; }
         public DateTime Date { get; set; }
         public int UserId { get; set; }

@@ -34,7 +34,7 @@ namespace Montrac.Domain.Services
 
                 var user = await UserRepository.GetAsync(userId);
                 //if the invited user isnt the actual user
-                if (user == null || invitation.GuestId == user.Id)
+                if (user == null || invitation.GuestId != user.Id)
                     return false;
 
                 if (accept && !invitation.Status)
