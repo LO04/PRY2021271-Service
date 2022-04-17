@@ -54,10 +54,17 @@ namespace Montrac.Services
             if (await UserRepository.GetAsync(url.UserId) == null)
                 return new Response<Url>("User is missing");
 
-            var result = await UrlRepository.InsertAsync(url);
+            try
+            {
+                var result = await UrlRepository.InsertAsync(url);
+                await UnitOfWork.CompleteAsync();
+                return new Response<Url>(result);
+            }
+            catch (Exception ex)
+            {
+                return new Response<Url>($"An error occurred while creating url: {ex.Message}");
+            }
 
-            await UnitOfWork.CompleteAsync();
-            return new Response<Url>(result);
         }
         public async Task<bool> DeleteUrl(int urlId)
         {
@@ -106,7 +113,7 @@ namespace Montrac.Services
             if (userId != null)
                 query = query.Where(q => q.UserId == userId);
 
-            return await 
+            return await
                 query
                 .Include(x => x.User)
                 .ToListAsync();

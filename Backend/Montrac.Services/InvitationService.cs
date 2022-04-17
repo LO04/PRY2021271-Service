@@ -102,14 +102,18 @@ namespace Montrac.Domain.Services
             };
 
             request.Status = false;
+
             request.Manager = basicManager;
             request.Guest = basicGuest;
+            request.ManagerId = manager.Id;
+            request.GuestId = guest.Id;
+
             manager.Invitations.Add(request);
 
             try
             {
-                await UserRepository.UpdateAsync(manager);
                 await InvitationRepository.InsertAsync(request);
+                await UserRepository.UpdateAsync(manager);
                 await UnitOfWork.CompleteAsync();
             }
             catch (Exception ex)
