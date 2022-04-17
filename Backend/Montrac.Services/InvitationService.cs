@@ -81,7 +81,10 @@ namespace Montrac.Domain.Services
             if (manager == null)
                 return new Response<InvitationRequest>("The managerId that you use to invite doesnt exist");
 
-            if (guest != null && guest?.Id == manager.Id)
+            if (guest == null)
+                return new Response<InvitationRequest>("The guest that you try to invite doesnt exist");
+
+            if (guest?.Id == manager.Id)
                 return new Response<InvitationRequest>("Cannot send an invite to yourself");
 
             var basicManager = new GuestUsers()
@@ -93,8 +96,9 @@ namespace Montrac.Domain.Services
 
             var basicGuest = new GuestUsers()
             {
-                FullName = request.FullName,
-                Email = request.Email
+                Id = guest.Id,
+                FullName = guest.FirstName + ' ' + guest.LastName,
+                Email = guest.Email
             };
 
             request.Status = false;
