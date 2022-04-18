@@ -145,11 +145,18 @@ namespace Montrac.Domain.Services
         {
             var query = InvitationRepository.GetAll();
 
+
             if (managerId != null)
-                query = query.Where(q => q.ManagerId == managerId);
+            {
+                var manager = await UserRepository.GetAsync(managerId.Value);
+                query = query.Where(q => q.Manager.Email == manager.Email);
+            }
 
             if (guestId != null)
-                query = query.Where(q => q.GuestId == guestId);
+            {
+                var guest = await UserRepository.GetAsync(guestId.Value);
+                query = query.Where(q => q.Guest.Email == guest.Email);
+            }
 
             return await query
                 .Include(x => x.Guest)
