@@ -45,9 +45,9 @@ namespace Montrac.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<BasicUserView>> Search([FromQuery] int? managerId, [FromQuery] int? userId)
+        public async Task<IEnumerable<BasicUserView>> Search([FromQuery]string email, [FromQuery] int? managerId, [FromQuery] int? userId)
         {
-            var users = await UserService.Search(managerId, userId);
+            var users = await UserService.Search(email, managerId, userId);
             return Mapper.Map<IEnumerable<User>, IEnumerable<BasicUserView>>(users);
         }
 
