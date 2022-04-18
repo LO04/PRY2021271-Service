@@ -7,17 +7,8 @@ using System.Threading.Tasks;
 
 namespace Montrac.Domain.DataObjects.Invitation
 {
-    public class CreateNewInvitation
-    {
-        public bool Status { get; set; }
-        public string Email { get; set; }
-        public string FullName { get; set; }
-        public int ManagerId { get; set; }
-    }
-
     public class NewInvitation
     {
-        public int Id { get; set; }
         public bool Status { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }

@@ -85,7 +85,7 @@ namespace Montrac.Services
             }
         }
 
-        public async Task<IEnumerable<User>> Search(int? managerId = null, int? userId = null)
+        public async Task<IEnumerable<User>> Search(string email, int? managerId = null, int? userId = null)
         {
             var query = UserRepository.GetAll();
 
@@ -94,6 +94,9 @@ namespace Montrac.Services
 
             if (userId != null)
                 query = query.Where(q => q.Id == userId);
+
+            if (!string.IsNullOrEmpty(email))
+                query = query.Where(q => q.Email == email);
 
             return await
                 query

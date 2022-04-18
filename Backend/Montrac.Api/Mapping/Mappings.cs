@@ -23,7 +23,6 @@ namespace Montrac.Api.Mapping
             CreateMap<Domain.Models.Program, NewProgram>();
             CreateMap<NewInvitation, InvitationRequest>();
             CreateMap<InvitationRequest, NewInvitation>();
-            CreateMap<CreateNewInvitation, InvitationRequest>();
             CreateMap<RegisterArea, Area>();
             CreateMap<NewArea, Area>();
             CreateMap<Area, NewArea>();

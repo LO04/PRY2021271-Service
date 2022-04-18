@@ -68,7 +68,7 @@ namespace Montrac.Persistence
             builder.Entity<InvitationRequest>().Property(x => x.Id)
                 .IsRequired()
                 .ValueGeneratedOnAdd();
-
+                
             builder.ApplySnakeCaseNamingConvention();
         }
     }

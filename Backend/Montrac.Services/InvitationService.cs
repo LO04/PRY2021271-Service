@@ -87,33 +87,31 @@ namespace Montrac.Domain.Services
             if (guest?.Id == manager.Id)
                 return new Response<InvitationRequest>("Cannot send an invite to yourself");
 
+            var existingInvitations = InvitationRepository.GetAll().Where(x => x.ManagerId == request.ManagerId && x.Email == request.Email).FirstOrDefault();
+            if (existingInvitations != null)
+                return new Response<InvitationRequest>("Cannot create another invitation to this guest user because you have an existing one");
+
             var basicManager = new GuestUsers()
             {
-                Id = manager.Id,
                 FullName = manager.FirstName + ' ' + manager.LastName,
                 Email = manager.Email
             };
 
             var basicGuest = new GuestUsers()
             {
-                Id = guest.Id,
                 FullName = guest.FirstName + ' ' + guest.LastName,
                 Email = guest.Email
             };
 
             request.Status = false;
-
-            request.Manager = basicManager;
-            request.Guest = basicGuest;
             request.ManagerId = manager.Id;
             request.GuestId = guest.Id;
-
-            manager.Invitations.Add(request);
+            request.Manager = basicManager;
+            request.Guest = basicGuest;
 
             try
             {
                 await InvitationRepository.InsertAsync(request);
-                await UserRepository.UpdateAsync(manager);
                 await UnitOfWork.CompleteAsync();
             }
             catch (Exception ex)

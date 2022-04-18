@@ -8,7 +8,7 @@ namespace Montrac.Domain.Services
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> Search(int? managerId = null, int? userId = null);
+        Task<IEnumerable<User>> Search(string email, int? managerId = null, int? userId = null);
         Task<Response<User>> CreateUser(User user);
         Task<Response<User>> EditUser(User user);
         Task<bool> DeleteUser(int userId);
