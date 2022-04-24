@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistorialNavegación", "HistorialNavegación\HistorialNavegación.csproj", "{CBA678F4-47E1-4734-8834-0FAF5693A9AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBA678F4-47E1-4734-8834-0FAF5693A9AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA678F4-47E1-4734-8834-0FAF5693A9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA678F4-47E1-4734-8834-0FAF5693A9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA678F4-47E1-4734-8834-0FAF5693A9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83C73257-5A1C-4991-8812-83A170F0AF4A}
+	EndGlobalSection
+EndGlobal
