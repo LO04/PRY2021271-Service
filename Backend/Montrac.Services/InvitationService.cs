@@ -91,23 +91,9 @@ namespace Montrac.Domain.Services
             if (existingInvitations != null)
                 return new Response<InvitationRequest>("Cannot create another invitation to this guest user because you have an existing one");
 
-            var basicManager = new GuestUsers()
-            {
-                FullName = manager.FirstName + ' ' + manager.LastName,
-                Email = manager.Email
-            };
-
-            var basicGuest = new GuestUsers()
-            {
-                FullName = guest.FirstName + ' ' + guest.LastName,
-                Email = guest.Email
-            };
-
             request.Status = false;
             request.ManagerId = manager.Id;
             request.GuestId = guest.Id;
-            request.Manager = basicManager;
-            request.Guest = basicGuest;
 
             try
             {
@@ -147,21 +133,12 @@ namespace Montrac.Domain.Services
 
 
             if (managerId != null)
-            {
-                var manager = await UserRepository.GetAsync(managerId.Value);
-                query = query.Where(q => q.Manager.Email == manager.Email);
-            }
+                query = query.Where(q => q.ManagerId == managerId);
 
             if (guestId != null)
-            {
-                var guest = await UserRepository.GetAsync(guestId.Value);
-                query = query.Where(q => q.Guest.Email == guest.Email);
-            }
+                query = query.Where(q => q.GuestId == guestId);
 
-            return await query
-                .Include(x => x.Guest)
-                .Include(x => x.Manager)
-                .ToListAsync();
+            return await query.ToListAsync();
         }
     }
 }

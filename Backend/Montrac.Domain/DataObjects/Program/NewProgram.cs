@@ -13,7 +13,6 @@ namespace Montrac.Domain.DataObjects
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal? TimeRemaining { get; set; }
         public decimal? TimeUsed { get; set; }
         public int UserId { get; set; }
     }
