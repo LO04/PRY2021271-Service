@@ -38,3 +38,45 @@ C:\Users\PC\Desktop\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFr
 C:\Users\PC\Desktop\HistorialNavegación\HistorialNavegación\bin\Debug\Newtonsoft.Json.xml
 C:\Users\PC\Desktop\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.xml
 C:\Users\PC\Desktop\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.CopyComplete
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.exe.config
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.exe
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.pdb
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\Newtonsoft.Json.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.EF6.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.Linq.dll
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.xml
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\Newtonsoft.Json.xml
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.xml
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.AssemblyReference.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.Form1.resources
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.Properties.Resources.resources
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.GenerateResource.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.CoreCompileInputs.cache
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.CopyComplete
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.exe
+D:\UPC\202201\Taller de Desempeño Profesional\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.pdb
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.exe.config
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.exe
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\HistorialNavegación.pdb
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\Newtonsoft.Json.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.EF6.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.Linq.dll
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.xml
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\Newtonsoft.Json.xml
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\bin\Debug\System.Data.SQLite.xml
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.AssemblyReference.cache
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.Form1.resources
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.Properties.Resources.resources
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.GenerateResource.cache
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.CoreCompileInputs.cache
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.csproj.CopyComplete
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.exe
+D:\UPC\202201\Taller de Desempeño Profesional\Proyecto\PRY2021271-Service\HistorialNavegación\HistorialNavegación\obj\Debug\HistorialNavegación.pdb

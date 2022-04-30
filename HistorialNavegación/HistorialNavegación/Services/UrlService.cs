@@ -16,7 +16,7 @@ namespace HistorialNavegación.Services
         private readonly string baseUrl = "https://montracapi20220413154050.azurewebsites.net/api/";
         // for now service work with token & userId
         private readonly string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2NTA4Mjk3MjQsImV4cCI6MTY1MTQzNDUyMywiaWF0IjoxNjUwODI5NzI0fQ.aZOuLECyh4lfHkw5md2fmdi0nbpDDKWWCNXzh7j8mng";
-        private readonly int userId = 1;
+        private readonly int userId = 2;
 
         public UrlService()
         {
