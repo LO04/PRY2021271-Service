@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Proyecto\\PRY2021271-Service\\Cap_Pantalla\\Cap_Pantalla\\Cap_Pantalla.csproj": {}
+  },
+  "projects": {
+    "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Proyecto\\PRY2021271-Service\\Cap_Pantalla\\Cap_Pantalla\\Cap_Pantalla.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Proyecto\\PRY2021271-Service\\Cap_Pantalla\\Cap_Pantalla\\Cap_Pantalla.csproj",
+        "projectName": "Cap_Pantalla",
+        "projectPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Proyecto\\PRY2021271-Service\\Cap_Pantalla\\Cap_Pantalla\\Cap_Pantalla.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\UPC\\202201\\Taller de Desempeño Profesional\\Proyecto\\PRY2021271-Service\\Cap_Pantalla\\Cap_Pantalla\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.11.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
