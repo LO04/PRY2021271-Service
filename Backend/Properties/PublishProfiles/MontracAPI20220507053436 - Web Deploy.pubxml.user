@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA56kQyVq/qkWxsV4hucoMPQAAAAACAAAAAAAQZgAAAAEAACAAAADjj3Pfw5ukwAIDLqqkf1/APy201i8xhndjW4KiVL/B7AAAAAAOgAAAAAIAACAAAAALLsI1qAq1P4s/moBZp/gwwG34N8aTMY5hS1coH/anA4AAAAAlGnDOr6NQihQDqqjBRU/xxzFjnwihyXQ/zzEfhmVHlRNS1tcizwcJ//1zqb6c1Slle2HhQnxCxzRNeXksd+pVv6AFiOMe04sL65NjReZIeF4JFS1dEXxrb5SKtSnT1Fm68GWCwkOHXoXtTRf8kM2WEFYrwpWWa8QxSvKqzJsMr0AAAAA0Tz31GQVX68m6/NYKQ6liio//Przvb13tqqYCsNcIl7nN84nRkWEyFo/dtNg0enI+6WzMnR3HUruVO6oWdPRw</EncryptedPassword>
+    <History>True|2022-05-07T23:52:34.9618502Z;False|2022-05-07T18:49:07.7295611-05:00;True|2022-05-07T18:46:54.1691281-05:00;True|2022-05-07T18:31:51.0908811-05:00;True|2022-05-07T18:30:23.6603727-05:00;True|2022-05-07T18:26:58.8872938-05:00;True|2022-05-07T18:25:30.5410274-05:00;False|2022-05-07T18:24:53.7465889-05:00;True|2022-05-07T18:20:44.5120442-05:00;True|2022-05-07T18:03:46.7001741-05:00;False|2022-05-07T17:46:14.1051606-05:00;False|2022-05-07T17:39:27.9806072-05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:servermontrac.database.windows.net,1433%3bInitial Catalog=MontracDb%3bPersist Security Info=False%3bUser ID=servermontrac%3bPassword=Montr%40c123%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Montrac.API.Persistence.MontracDbContext">
+      <Value>Server=tcp:servermontrac.database.windows.net,1433%3bInitial Catalog=MontracDb%3bPersist Security Info=False%3bUser ID=servermontrac%3bPassword=Montr%40c123%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

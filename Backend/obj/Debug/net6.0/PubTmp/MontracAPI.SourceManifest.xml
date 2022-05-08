@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\UPC\TPD\Nueva carpeta\MontracAPI\obj\Debug\net6.0\PubTmp\Out\" />
+  <dbfullsql path="C:\UPC\TPD\Nueva carpeta\MontracAPI\obj\Debug\net6.0\PubTmp\EFSQLScripts\Montrac.API.Persistence.MontracDbContext.sql" />
+</sitemanifest>
