@@ -52,9 +52,9 @@ namespace Montrac.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Invitation>> Search([FromQuery] int? managerId, [FromQuery] int? guestId)
+        public async Task<IEnumerable<Invitation>> Search([FromQuery] int? managerId, [FromQuery] int? guestId, [FromQuery] string? guestEmail)
         {
-            return await _invitationService.Search(managerId, guestId);
+            return await _invitationService.Search(managerId, guestId, guestEmail);
         }
     }
 }

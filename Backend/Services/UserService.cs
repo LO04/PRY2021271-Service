@@ -75,7 +75,10 @@ namespace Montrac.Services
 
             try
             {
+                existedUser.FirstName = user.FirstName ?? existedUser.FirstName;
+                existedUser.LastName = user.LastName ?? existedUser.LastName;
                 existedUser.Email = user.Email ?? existedUser.Email;
+                existedUser.Identification = user.Identification ?? existedUser.Identification;
                 existedUser.PhoneNumber = user.PhoneNumber ?? existedUser.PhoneNumber;
                 existedUser.Password = user.Password ?? existedUser.Password;
                 existedUser.UpdatedAt = DateTime.Now;
