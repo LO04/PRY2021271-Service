@@ -17,6 +17,7 @@ namespace Montrac.API.Domain.Models
 
         public User()
         {
+            Identification = Guid.NewGuid().ToString("N");
             Programs = new HashSet<Program>();
             Screenshots = new HashSet<Screenshot>();
             Urls = new HashSet<Url>();

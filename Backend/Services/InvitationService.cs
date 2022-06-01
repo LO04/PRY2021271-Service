@@ -101,19 +101,9 @@ namespace Montrac.API.Services
                 request.Status = false;
                 request.ManagerId = manager.Id;
 
-                //var sendResult = await SendEmail(request.Email, manager.FirstName);
                 await SendEmail(request.Email, manager.FirstName);
                 await _invitationRepository.InsertAsync(request);
                 await _unitOfWork.CompleteAsync();
-                //if (sendResult.Status == PostmarkStatus.Success)
-                //{
-                //    await _invitationRepository.InsertAsync(request);
-                //    await _unitOfWork.CompleteAsync();
-                //}
-                //else
-                //{
-                //    return new Response<Invitation>($"La invitación no pudo ser enviada {request.Email} debido a un problema");
-                //}
             }
             catch (Exception ex)
             {
@@ -130,8 +120,8 @@ namespace Montrac.API.Services
             mail.To.Add(email);
             mail.Subject = $"Invitación para el grupo de trabajo de {managerName}";
             mail.Body = $"<div><h2>{managerName} lo ha invitado a unirse a su nuevo grupo de trabajo</h2>" +
-                $"<h4>Puede descargar la aplicación desktop aqui: https://montracblobstorage.blob.core.windows.net/fileupload/Setup.msi</h4>" +
-                $"<h4>Puede ingresar a esta página web para ver los detalles de su trabajo: https://web-delta-dun.vercel.app/#/login</h4>" +
+                $"<h4>Puede descargar la aplicación desktop aqui: https://blobmontracstorage.blob.core.windows.net/fileupload/Setup.rar</h4>" +
+            $"<h4>Puede ingresar a esta página web para ver los detalles de su trabajo: https://web-delta-dun.vercel.app/#/login</h4>" +
                 $"<h4>Las credenciales de acceso que le han sido brindadas son:</h4><h5><b>Correo:{email}</h5><h5> Contraseña: password</b></h5></div>";
             mail.IsBodyHtml = true;
 
@@ -141,22 +131,31 @@ namespace Montrac.API.Services
             await smtp.SendMailAsync(mail);
         }
 
-        //public async Task<dynamic> SendEmail(string email, string managerName)
-        //{
-        //    var message = new PostmarkMessage()
-        //    {
-        //        To = email,
-        //        From = "oscar.cabrera@ieholding.com",
-        //        TrackOpens = true,
-        //        Subject = $"Invitación para el grupo de trabajo de {managerName}",
-        //        TextBody = "Plain Text Body",
-        //        HtmlBody = $"<div><h2>{managerName} lo ha invitado a unirse a su nuevo grupo de trabajo</h2>" +
-        //        $"<h4>Las credenciales de acceso que le han sido brindadas son: <b>email:{email}, password: password</b></h4></div>"
-        //    };
+        public async Task<bool> ConfirmPayment(string name, string email, string suscription)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("montrac2022@gmail.com");
+                mail.To.Add(email);
+                mail.Subject = $"Confirmación de pago aceptada";
+                mail.Body = $"<div><h2>{name} se ha confirmado su pago por una suscripción {suscription} para utilizar la aplicación de Montrac</h2>" +
+                    $"<h4>Puede descargar la aplicación desktop aqui: https://montracblobstorage.blob.core.windows.net/fileupload/Setup.msi</h4>" +
+                    $"<h4>Puede ingresar a esta página web para comenzar a invitar a sus trabajadores: https://web-delta-dun.vercel.app/#/login</h4>" +
+                    $"<h4>Las credenciales de acceso que le han sido brindadas son:</h4><h5><b>Correo:admin@montrac.com</h5><h5> Contraseña: Admin@123</b></h5></div>";
+                mail.IsBodyHtml = true;
 
-        //    var client = new PostmarkClient("147a8bf8-d621-4f15-8629-3f54ce7451a3");
-        //    return await client.SendMessageAsync(message);
-        //}
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.Credentials = new System.Net.NetworkCredential("montrac2022@gmail.com", "Montrac@123");
+                smtp.EnableSsl = true;
+                await smtp.SendMailAsync(mail);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public async Task<bool> DeleteInvitation(int invitationId)
         {

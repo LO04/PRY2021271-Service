@@ -29,6 +29,17 @@ namespace Montrac.API.Controllers
             return Ok(true);
         }
 
+        [AllowAnonymous]
+        [HttpPost("/api/confirm")]
+        public async Task<IActionResult> ConfirmPayment([FromQuery] string name, [FromQuery] string email, [FromQuery] string suscription)
+        {
+            var result = await _invitationService.ConfirmPayment(name, email, suscription);
+            if (result != true)
+                return BadRequest("Payment couldnt be confirmed");
+
+            return Ok(true);
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] Invitation request)
         {

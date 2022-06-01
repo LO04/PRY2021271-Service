@@ -23,16 +23,21 @@ namespace Montrac.API.Authentication
 
         public async Task<AuthenticationResponse?> Authenticate(AuthenticationRequest request)
         {
-            var user = await UserRepository.FirstOrDefaultAsync(x =>
-                           x.Email == request.Email &&
-                       x.Password == request.Password);
-
-            if (user == null) return null;
-
-            var token = GenerateJwtToken(user);
-            return new AuthenticationResponse(user, token);
+            var isGuid = Guid.TryParse(request.Email, out _);
+            User user = null;
+            if (isGuid)
+            {
+                user = await UserRepository.FirstOrDefaultAsync(x => x.Identification == request.Email && x.Password == request.Password);
+            }
+            else
+            {
+                user = await UserRepository.FirstOrDefaultAsync(x => x.Email == request.Email && x.Password == request.Password);
+            }
+                if (user == null) return null;
+                var token = GenerateJwtToken(user);
+                return new AuthenticationResponse(user, token);
         }
-        
+
         public string GenerateJwtToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -43,7 +48,7 @@ namespace Montrac.API.Authentication
                 {
                     new (ClaimTypes.Name, user.Id.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddDays(60),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)
